@@ -1,0 +1,36 @@
+TelegramBundle\Entity\Message:
+    type: entity
+    table: null
+    repositoryClass: TelegramBundle\Repository\MessageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        telegramId:
+            type: integer
+            column: telegram_id
+        userId:
+            type: integer
+            column: user_id
+        chatId:
+            type: integer
+            column: chat_id
+        message:
+            type: text
+        date:
+            type: datetime
+    lifecycleCallbacks: {  }
+    manyToOne:
+        user:
+            targetEntity: User
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+        chat:
+            targetEntity: Chat
+            joinColumn:
+                name: chat_id
+                referencedColumnName: id

@@ -1,0 +1,18 @@
+TelegramBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: TelegramBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        telegramId:
+            type: integer
+            column: telegram_id
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
